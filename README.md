@@ -45,7 +45,7 @@
 
  -  Je construis un objet TrainValidationSplit(70/30) pour tester la grille d'hyperparamètres.
 
- - J'entraîne le modèle avec le set d'entrainement. Avec ValidationSplit, chaque modèle généré selon la grille fournit est entrainé sur une partie des données, puis ranké sur la partie restante(70% et 30% dans mon cas).
+ - J'entraîne le modèle avec le set d'entrainement. Avec ValidationSplit, chaque modèle généré selon la grille fournie est entrainé sur une partie des données, puis ranké sur la partie restante(70% et 30% dans mon cas).
 
  - J'applique le modèle entrainé sur les données de test.
 
