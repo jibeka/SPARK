@@ -7,10 +7,10 @@
     - /JobML_modelFinal             : Modèle final sauvé à la fin du processing
     - /src                          : sources du projet
     - build.sbt                     : build.sbt
-    - cleanedDataFrame.parquet.zip  : fichier zip contenant les données néttoyées pendant les TP 2/3
-    - CommandeSave.txt              : Liste des commandes pour lancer Spark (master et slave), compiler et executer
+    - cleanedDataFrame.parquet.zip  : fichier zip contenant les données nettoyées pendant les TP 2/3
+    - CommandeSave.txt              : Liste des commandes pour lancer Spark (master et slave), compiler et exécuter
     - plugins.sbt                   : plugins.sbt
-    - Results_Terminal.txt          : Capture du terminal à la fin de l'execution
+    - Results_Terminal.txt          : Capture du terminal à la fin de l'exécution
 
 
 
@@ -33,9 +33,9 @@
 
  -  Le nom du fichier d'entrée est passé en argument. Ce fichier est le fichier fournit à la fin du TP 3.
 
- -  Je commence par créer un array ne contenant que les colonnes de features puis j'applique le module VectorAssembler pour une colonne features.
+ -  Je commence par créer un array ne contenant que les colonnes de features puis j'applique le module VectorAssembler pour générer une colonne features.
 
- -  Ensuite, j'applique le module stringIndexer pour transformer les labels STRINGS en label DOUBLE.
+ -  Ensuite, j'applique le module StringIndexer pour transformer les labels STRING en labels DOUBLE.
 
  -  Je sépare les données d'entrée en set d'entrainement et test avec randomSplit (90, 10).
 
@@ -43,9 +43,9 @@
 
  -  Je crée une grille d'hyperparamètres pour le paramètre de régularisation avec GridParam.
 
- -  Je construis un objet TrainValidation Split(70/30) pour tester la grille d'hyperparamètres.
+ -  Je construis un objet TrainValidationSplit(70/30) pour tester la grille d'hyperparamètres.
 
- - Je fit le modèles avec le set d'entrainement.
+ - J'entraîne le modèle avec le set d'entrainement. Avec ValidationSplit, chaque modèle généré selon la grille fournit est entrainé sur une partie des données, puis ranké sur la partie restante(70% et 30% dans mon cas).
 
  - J'applique le modèle entrainé sur les données de test.
 
