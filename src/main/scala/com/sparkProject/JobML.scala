@@ -137,7 +137,7 @@ object JobML {
     val bModel = tvsModel.bestModel.asInstanceOf[LogisticRegressionModel]
     println("Paramètres du modèle final")
     println(bModel.extractParamMap.toString())
-    bModel.write.overwrite().save(directory + "/JobML_modelFinal.csv")
+    bModel.write.overwrite().save(directory + "/JobML_modelFinal")
     println("File saved: " + directory + "/JobML_modelFinal")
 
     // On applique le meilleur modèle sur le set de test
