@@ -1,0 +1,50 @@
+
+Paramètres de régularisations
++--------------------+------------------+
+|           regParams|     modelAccuracy|
++--------------------+------------------+
+|              1.0E-6|0.9871129383992222|
+|3.162277660168379E-6|0.9863333669733682|
+|              1.0E-5| 0.986794089298212|
+|3.162277660168379...|0.9880124438906034|
+|              1.0E-4|0.9891971584402128|
+|3.162277660168379...|0.9875356328496421|
+|               0.001|0.9864708523655523|
+|0.003162277660168...|0.9857293088141263|
+|                0.01| 0.983289674408263|
+| 0.03162277660168379|0.9744204040022835|
+|                 0.1|0.9290926402899391|
+| 0.31622776601683794|               0.5|
+|                 1.0|               0.5|
++--------------------+------------------+
+
+Paramètres du modèle final
+{
+        logreg_dd9b992831e6-elasticNetParam: 1.0,
+        logreg_dd9b992831e6-featuresCol: features,
+        logreg_dd9b992831e6-fitIntercept: true,
+        logreg_dd9b992831e6-labelCol: label,
+        logreg_dd9b992831e6-maxIter: 300,
+        logreg_dd9b992831e6-predictionCol: prediction,
+        logreg_dd9b992831e6-probabilityCol: probability,
+        logreg_dd9b992831e6-rawPredictionCol: rawPrediction,
+        logreg_dd9b992831e6-regParam: 1.0E-4,
+        logreg_dd9b992831e6-standardization: true,
+        logreg_dd9b992831e6-threshold: 0.5,
+        logreg_dd9b992831e6-tol: 1.0E-5
+}
+File saved: /home/jbk/shareWin/Spark/TP2-3//JobML_modelFinal
+Résultat de TrainValidationSet+-----+----------+-----+
+|label|prediction|count|
++-----+----------+-----+
+|  1.0|       1.0|  208|
+|  0.0|       1.0|   14|
+|  1.0|       0.0|    8|
+|  0.0|       0.0|  343|
++-----+----------+-----+
+
+Matrice de confusion : 
+343.0  14.0   
+8.0    208.0  
+La précision du modèle est : 
+0.9616055846422339

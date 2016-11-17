@@ -1,0 +1,25 @@
+
+% Start master
+cd ~/SPARK/spark-2.0.0-bin-hadoop2.7/sbin
+./start-master.sh
+
+
+% Start Slave
+./start-slave.sh jbk-UbVm:7077
+
+
+
+in (intellij) terminal
+
+% compile
+
+cd /media/sf_ShareJBKubVM/Spark/TP2-3/tp_spark
+sbt assembly
+
+
+
+% execute
+
+cd ~/SPARK/spark-2.0.0-bin-hadoop2.7/bin
+
+./spark-submit --conf spark.eventLog.enabled=true --conf spark.eventLog.dir="/tmp" --driver-memory 3G --executor-memory 4G --class com.sparkProject.JobML --master spark://jbk-UbVm:7077 /media/sf_ShareJBKubVM/Spark/TP2-3/tp_spark/target/scala-2.11/tp_spark-assembly-1.0.jar /home/jbk/shareWin/Spark/TP2-3/cleanedDataFrame.parquet
